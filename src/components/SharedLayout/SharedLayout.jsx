@@ -1,18 +1,13 @@
-import { Outlet } from 'react-router-dom';
-import { Container, Header } from '../SharedLayout/SharedLayout.styled';
 import { Suspense } from 'react';
-import { SearchBar } from '../SearchBar/SearchBar';
+import { Outlet } from 'react-router-dom';
+import { Loader } from '../Loader/Loader';
+import { Container, Header } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   return (
     <Container>
-      <Header>
-        <h1>jdhsladlsakdla</h1>
-      </Header>
-      <SearchBar
-      // value={ } onChange={ }
-      />
-      <Suspense>
+      <Header />
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </Container>

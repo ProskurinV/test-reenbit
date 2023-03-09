@@ -18,8 +18,10 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-  /* background-image: url(${bacgroundImg});
+  background-image: url(${bacgroundImg});
+  width: 312px;
+  min-height: 104px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: contain;
 `;

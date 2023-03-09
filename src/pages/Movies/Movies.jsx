@@ -1,19 +1,19 @@
-import ListFilms from '../../components/ListFilms/ListFilms';
-import { Loader } from '../../components/Loader/Loader';
-import { useTrendingFilms } from '../../hooks';
-import { MainSection } from './Home.styled';
+import { MainSection } from './Movies.styled';
 import SearchBar from '../../components/Searchbar/SearchBar';
-import { useSearchParams } from 'react-router-dom';
-import { fetchSearchFilms } from '../../api/movieDatabaseApi';
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import Loader from '../../components/Loader';
+import { fetchSearchFilms } from '../../api/movieDatabaseApi';
+import ListFilms from '../../components/ListFilms/ListFilms';
 
-export default function Home() {
-  const { trendingFilms, isLoading } = useTrendingFilms();
+export default function Movies() {
   const [searchMovies, setSearchMovies] = useState([]);
   const [query, setQuery] = useState('');
   const [error, setError] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+
   useEffect(() => {
     const searchQuery = searchParams.get('query') ?? '';
 
@@ -62,13 +62,14 @@ export default function Home() {
       setSearchParams({ query: values.query });
     }
   };
+
   return (
-    <>
-      {isLoading && <Loader />}
+    <MainSection>
       <SearchBar onSubmit={handlerFormSubmit} />
-      <MainSection>
-        <ListFilms films={trendingFilms} />
-      </MainSection>
-    </>
+      {isLoading && <Loader />}
+
+      <ListFilms films={searchMovies} />
+      <Toaster />
+    </MainSection>
   );
 }
