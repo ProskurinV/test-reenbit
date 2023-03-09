@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Container, Header } from '../SharedLayout/SharedLayout.styled';
 import { Suspense } from 'react';
-import { SearchBar } from 'components/SearchBar/SearchBar';
+import { SearchBar } from '../SearchBar/SearchBar';
 
 export const SharedLayout = () => {
   return (
