@@ -1,8 +1,7 @@
-import BackLink from 'components/BackLink/BackLink';
+import BackLink from '../../components/BackLink/BackLink';
 import { Suspense } from 'react';
 
-import { useMovieDetails } from 'hooks';
-import PropTypes from 'prop-types';
+import { useMovieDetails } from '../../hooks';
 import { Toaster } from 'react-hot-toast';
 import { Outlet, useLocation } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
@@ -75,17 +74,3 @@ export default function MovieDetails() {
     </>
   );
 }
-
-MovieDetails.propTypes = {
-  movie: PropTypes.arrayOf(
-    PropTypes.shape({
-      poster_path: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      vote_average: PropTypes.number.isRequired,
-      overview: PropTypes.string.isRequired,
-      genres: PropTypes.arrayOf(
-        PropTypes.shape({ genre: PropTypes.string.isRequired })
-      ),
-    })
-  ),
-};
