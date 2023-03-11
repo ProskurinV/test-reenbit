@@ -4,26 +4,22 @@ import { routes } from '../routes';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
 const Home = lazy(() => import('../pages/Home/Home'));
-const Movies = lazy(() => import('../pages/Movies/Movies'));
-// const SharedLayout = lazy(() =>
-//   import('../components/SharedLayout/SharedLayout')
-// );
-const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
+
+const CharactersDetails = lazy(() =>
+  import('../pages/CharactersDetails/CharacterDetails')
+);
 
 export const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path={routes.HOME} element={<SharedLayout />}>
-          <Route index element={<Home />} />
-          <Route path={routes.MOVIES} element={<Movies />} />
-          <Route
-            path={`${routes.MOVIES}/:movieId`}
-            element={<MovieDetails />}
-          ></Route>
-          <Route path="*" element={<Navigate to="/" replace={<Home />} />} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path={routes.HOME} element={<SharedLayout />}>
+        <Route index element={<Home />} />
+        <Route
+          path={`${routes.CHARACTERDETAILS}/:name`}
+          element={<CharactersDetails />}
+        ></Route>
+        <Route path="*" element={<Navigate to="/" replace={<Home />} />} />
+      </Route>
+    </Routes>
   );
 };

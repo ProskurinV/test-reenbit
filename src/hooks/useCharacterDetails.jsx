@@ -1,32 +1,32 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
-import * as SERVICE from '../api/movieDatabaseApi';
+import { fetchCharacterById } from '../api/rickAndMortyApi';
 import { routes } from '../routes';
 
-export const useMovieDetails = () => {
-  const { movieId } = useParams();
-  const [movie, setMovie] = useState({});
+export const useCharacterDetails = () => {
+  const { id } = useParams();
+  const [character, setCharacter] = useState({});
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function fetchMovieID(movieId) {
+    async function fetchCharacterID(id) {
       try {
         setIsLoading(true);
-        const response = await SERVICE.fetchFilmsById(movieId);
-        setMovie(response);
+        const response = await fetchCharacterById(id);
+        setCharacter(response);
       } catch {
-        setError('Can`t load movies!');
+        setError('Can`t load character!');
         navigate(routes.HOME, { replace: true });
       } finally {
         setIsLoading(false);
       }
     }
 
-    fetchMovieID(movieId);
-  }, [movieId, navigate]);
+    fetchCharacterID(id);
+  }, [id, navigate]);
 
   useEffect(() => {
     if (error !== false) {
@@ -34,5 +34,5 @@ export const useMovieDetails = () => {
     }
   }, [error]);
 
-  return { movie, isLoading };
+  return { character, isLoading };
 };

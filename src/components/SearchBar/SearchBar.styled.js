@@ -1,48 +1,55 @@
 import styled from 'styled-components';
+import IconSearch from '../../images/IconSearch.png';
 
-import { Form, Field } from 'formik';
-
-export const Search = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px;
-  flex-direction: column;
-`;
-
-export const FormEl = styled(Form)`
+export const Wrapper = styled.div`
   position: relative;
-  width: 200px;
-  align-self: center;
-`;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  width: 312px;
 
-export const Input = styled(Field)`
-  width: 100%;
-  height: 20px;
-  outline: none;
-  color: black;
-
-  border: none;
-  border-radius: 4px;
-
-  background-color: lightskyblue;
-  border-bottom: 0.5px solid #f7f7f7;
-
-  &::placeholder {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.4;
-    display: flex;
-    align-items: center;
-
-    color: black;
+  @media screen and (min-width: 1440px) {
+    width: 1020px;
+    margin-bottom: 61px;
   }
 `;
 
-export const BtnSearch = styled.button`
-  background-color: transparent;
-  border: none;
+export const Input = styled.input`
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  padding-left: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
   cursor: pointer;
+  outline: none;
+
+  &::placeholder {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1020px;
+  }
+`;
+
+export const Icon = styled.div`
+  background-image: url(${IconSearch});
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 48%;
+  margin-left: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+  color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  cursor: pointer;
 `;

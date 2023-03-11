@@ -1,11 +1,11 @@
 import { MainSection } from './Movies.styled';
-import SearchBar from '../../components/Searchbar/SearchBar';
+import { SearchBar } from '../../components/Searchbar/SearchBar';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import Loader from '../../components/Loader';
-import { fetchSearchFilms } from '../../api/movieDatabaseApi';
-import ListFilms from '../../components/ListFilms/ListFilms';
+import { fetchSearchFilms } from '../../api/rickAndMortyApi';
+import ListFilms from '../../components/CharactersList/CharacterLists';
 
 export default function Movies() {
   const [searchMovies, setSearchMovies] = useState([]);
