@@ -20,7 +20,7 @@ export const CharacterCard = styled.div`
     transform: scale(1.05);
   }
   @media screen and (min-width: 1440px) {
-    width: 240px;
+    min-width: 240px;
   }
 `;
 

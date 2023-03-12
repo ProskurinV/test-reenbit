@@ -1,7 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy } from 'react';
 import { routes } from '../routes';
-import { SharedLayout } from './SharedLayout/SharedLayout';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+// import { SharedLayout } from './SharedLayout/SharedLayout';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 
@@ -11,15 +13,16 @@ const CharactersDetails = lazy(() =>
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path={routes.HOME} element={<SharedLayout />}>
+    <Suspense>
+      <Routes>
+        <Route path={routes.HOME} element={<Home />} />
         <Route index element={<Home />} />
         <Route
-          path={`${routes.CHARACTERDETAILS}/:name`}
+          path={`${routes.CHARACTERDETAILS}/:id`}
           element={<CharactersDetails />}
         ></Route>
         <Route path="*" element={<Navigate to="/" replace={<Home />} />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </Suspense>
   );
 };

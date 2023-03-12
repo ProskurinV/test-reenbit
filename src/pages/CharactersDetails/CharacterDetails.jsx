@@ -3,8 +3,11 @@ import BackLink from '../../components/BackLink/BackLink';
 import { useCharacterDetails } from '../../hooks/useCharacterDetails';
 import { useLocation } from 'react-router-dom';
 import { Loader } from '../../components/Loader/Loader';
-import images from '../../images/images.jpg';
-// import { FilmCard, Img } from './CharactersDetails.styled';
+import {
+  CharacterPage,
+  CharacterWrapper,
+  Img,
+} from './CharactersDetails.styled';
 
 const CharactersDetails = () => {
   const location = useLocation();
@@ -14,19 +17,14 @@ const CharactersDetails = () => {
   const { image, name } = character;
 
   return (
-    <>
-      <BackLink to={backLink}>Back</BackLink>
+    <CharacterPage>
+      <BackLink to={backLink}>Go Back</BackLink>
 
       {isLoading && <Loader />}
-
-      <FilmCard>
-        {image ? (
-          <Img src={image} alt={name} />
-        ) : (
-          <Img src={images} alt={name} />
-        )}
-      </FilmCard>
-    </>
+      <CharacterWrapper>
+        <Img src={image} alt={name} />
+      </CharacterWrapper>
+    </CharacterPage>
   );
 };
 

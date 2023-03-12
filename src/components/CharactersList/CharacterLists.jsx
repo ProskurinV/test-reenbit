@@ -19,7 +19,7 @@ export const CharactersList = ({ characters }) => {
         characters.map(({ image, name, species, id }) => (
           <Link
             key={id}
-            to={`/${routes.CHARACTERDETAILS}/${name}`}
+            to={`/${routes.CHARACTERDETAILS}/${id}`}
             state={{ from: location }}
           >
             <CharacterCard>

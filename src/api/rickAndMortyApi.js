@@ -1,22 +1,19 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://rickandmortyapi.com/api';
-const characters = '/character';
+axios.defaults.baseURL = 'https://rickandmortyapi.com/api/character';
 
 export async function fetchAllCharacters() {
-  const { data } = await axios.get(`${characters}`);
-  console.log(data);
+  const { data } = await axios.get('');
   return data;
 }
 
 export async function fetchCharacterById(id) {
-  const { data } = await axios.get(`${id}`);
-  console.log(data);
+  const { data } = await axios.get(`/${id}`);
   return data;
 }
 
 export async function fetchFilterCharacters(query) {
-  const { data } = await axios.get(`/${characters}/?name=${query}`);
+  const { data } = await axios.get(`?name=${query}`);
 
   return data;
 }
