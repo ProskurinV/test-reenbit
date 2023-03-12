@@ -12,7 +12,16 @@ export const useAllCharacters = () => {
         setIsLoading(true);
         const response = await fetchAllCharacters();
         const characters = response.results;
-        setAllCharacters(characters);
+
+        const sortedCharactersSorted = characters.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+
+        // charactersSorted.forEach(character => {
+        //   console.log(character.name);
+        // });
+
+        setAllCharacters(sortedCharactersSorted);
       } catch {
         setError('Can`t load characters!');
       } finally {
