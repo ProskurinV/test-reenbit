@@ -19,3 +19,30 @@ export const SearchBar = ({ value, onChange }) => {
     </Wrapper>
   );
 };
+// =================
+// import { useState } from 'react';
+// import { Input } from './SearchBar.styled';
+
+// export const SearchBar = ({ onSearch }) => {
+//   const [value, setValue] = useState('');
+
+//   const handleChange = event => {
+//     setValue(event.target.value);
+//   };
+
+//   const handleKeyDown = event => {
+//     if (event.key === 'Enter') {
+//       onSearch(value);
+//     }
+//   };
+
+//   return (
+//     <Input
+//       type="text"
+//       placeholder="Search for a character..."
+//       value={value}
+//       onChange={handleChange}
+//       onKeyDown={handleKeyDown}
+//     />
+//   );
+// };

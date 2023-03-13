@@ -11,6 +11,7 @@ export const useAllCharacters = () => {
       try {
         setIsLoading(true);
         const response = await fetchAllCharacters();
+
         const characters = response.results;
 
         const sortedCharacters = characters.sort((a, b) =>
