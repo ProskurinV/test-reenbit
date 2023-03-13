@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const CharacterPage = styled.div`
   position: relative;
-  /* margin: 0 auto; */
   width: 368px;
   @media screen and (min-width: 1440px) {
     width: 1440px;
@@ -55,6 +54,10 @@ export const CharacterTitle = styled.h2`
 export const Description = styled.div`
   margin-left: 24px;
   margin-right: 32px;
+  margin-bottom: 85px;
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 142px;
+  }
 `;
 
 export const DescriptionTitle = styled.h3`

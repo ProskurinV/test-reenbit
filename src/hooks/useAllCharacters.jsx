@@ -1,39 +1,41 @@
-import { fetchAllCharacters } from '../api/rickAndMortyApi';
-import { useEffect, useState } from 'react';
+// import { fetchAllCharacters } from '../api/rickAndMortyApi';
+// // import { fetchFilterCharacters } from '../api/rickAndMortyApi';
 
-export const useAllCharacters = () => {
-  const [allCharacters, setAllCharacters] = useState([]);
-  const [error, setError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+// import { useEffect, useState } from 'react';
 
-  useEffect(() => {
-    async function fetchCharacter() {
-      try {
-        setIsLoading(true);
-        const response = await fetchAllCharacters();
+// export const useAllCharacters = () => {
+//   const [allCharacters, setAllCharacters] = useState([]);
+//   const [error, setError] = useState(false);
+//   const [isLoading, setIsLoading] = useState(false);
 
-        const characters = response.results;
+//   useEffect(() => {
+//     async function fetchCharacter() {
+//       try {
+//         setIsLoading(true);
+//         const response = await fetchAllCharacters();
 
-        const sortedCharacters = characters.sort((a, b) =>
-          a.name.localeCompare(b.name)
-        );
+//         const characters = response.results;
 
-        setAllCharacters(sortedCharacters);
-      } catch {
-        setError('Can`t load characters!');
-      } finally {
-        setIsLoading(false);
-      }
-    }
+//         const sortedCharacters = characters.sort((a, b) =>
+//           a.name.localeCompare(b.name)
+//         );
 
-    fetchCharacter();
-  }, []);
+//         setAllCharacters(sortedCharacters);
+//       } catch {
+//         setError('Can`t load characters!');
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     }
 
-  useEffect(() => {
-    if (error !== false) {
-      toast.error(error);
-    }
-  }, [error]);
+//     fetchCharacter();
+//   }, []);
 
-  return { allCharacters, isLoading };
-};
+//   useEffect(() => {
+//     if (error !== false) {
+//       toast.error(error);
+//     }
+//   }, [error]);
+
+//   return { allCharacters, isLoading };
+// };
