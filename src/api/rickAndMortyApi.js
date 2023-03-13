@@ -4,7 +4,6 @@ axios.defaults.baseURL = 'https://rickandmortyapi.com/api/character';
 
 export async function fetchAllCharacters() {
   const { data } = await axios.get('');
-  console.log(data);
   return data;
 }
 
@@ -13,8 +12,8 @@ export async function fetchCharacterById(id) {
   return data;
 }
 
-export async function fetchFilterCharacters(query) {
-  const { data } = await axios.get(`?name=${query}`);
+export async function fetchFilterCharacters(name) {
+  const { data } = await axios.get(`?name=${name}`);
 
   return data;
 }
