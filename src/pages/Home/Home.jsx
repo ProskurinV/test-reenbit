@@ -28,15 +28,15 @@
 // };
 // export default Home;
 // ==============================
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 import { CharactersList } from '../../components/CharactersList/CharacterLists';
 import { Loader } from '../../components/Loader/Loader';
-import { useAllCharacters } from '../.././hooks/useAllCharacters';
+// import { useAllCharacters } from '../.././hooks/useAllCharacters';
 import { Container, Header } from './Home.styled';
 import axios from 'axios';
 
-import { SearchBar } from '../../components/Searchbar/SearchBar';
-import { fetchFilterCharacters } from '../../api/rickAndMortyApi';
+// import { SearchBar } from '../../components/Searchbar/SearchBar';
+// import { fetchFilterCharacters } from '../../api/rickAndMortyApi';
 import { Suspense, useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
