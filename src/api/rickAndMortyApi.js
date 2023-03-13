@@ -13,8 +13,8 @@ export async function fetchCharacterById(id) {
   return data;
 }
 
-export async function fetchFilterCharacters(name) {
-  const { data } = await axios.get(`?name=${name}`);
+export async function fetchFilterCharacters() {
+  const { data } = await axios.get(`?name=${query}`);
 
   return data;
 }
