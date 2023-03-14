@@ -28,4 +28,3 @@ export const SearchBar = ({ query, setQuery }) => {
     </Wrapper>
   );
 };
-export default SearchBar;
