@@ -1,7 +1,7 @@
 import { CharactersList } from '../../components/CharactersList/CharacterLists';
 import { Loader } from '../../components/Loader/Loader';
 import { Container, Header } from './Home.styled';
-import { SearchBar } from '../../components/Searchbar/SearchBar';
+import SearchBar from '../../components/Searchbar/SearchBar';
 import { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useAllCharacters } from '../../hooks/useAllCharacters';
