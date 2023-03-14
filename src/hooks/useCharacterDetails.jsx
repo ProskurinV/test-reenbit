@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
+import Notiflix from 'notiflix';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchCharacterById } from '../api/rickAndMortyApi';
 import { routes } from '../routes';
@@ -18,7 +18,7 @@ export const useCharacterDetails = () => {
         const response = await fetchCharacterById(id);
         setCharacter(response);
       } catch {
-        setError('Can`t load character!');
+        Notiflix.Notify.failure('Can`t load characters!');
         navigate(routes.HOME, { replace: true });
       } finally {
         setIsLoading(false);
