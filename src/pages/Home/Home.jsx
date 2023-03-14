@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { CharactersList } from '../../components/CharactersList/CharacterLists';
 import { Loader } from '../../../src/components/Loader/Loader';
 import { Container, Header } from './Home.styled';
-import { SearchBar } from '../components/Searchbar/SearchBar';
+import { SearchBar } from '../../../src/components/Searchbar/SearchBar';
 
 import { useAllCharacters } from '../../hooks/useAllCharacters';
 
