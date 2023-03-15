@@ -34,3 +34,28 @@ export const Header = styled.div`
     height: 200px;
   }
 `;
+
+export const Button = styled.button`
+  position: absolute;
+  right: 24px;
+  top: 23px;
+  display: flex;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.17;
+  border-radius: 4px;
+  justify-content: center;
+  width: 150px;
+  background: transparent;
+  border: 2px solid lightgreen;
+  cursor: pointer;
+  :hover,
+  :focus {
+    border-color: green;
+    transition: 0.5s ease all;
+    transform: scale(1.05);
+    color: green;
+  }
+`;

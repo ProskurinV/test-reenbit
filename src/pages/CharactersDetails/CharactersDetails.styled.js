@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const CharacterPage = styled.div`
   position: relative;
   width: 368px;
+  margin: 0 auto;
+
   @media screen and (min-width: 1440px) {
     width: 1440px;
   }

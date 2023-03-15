@@ -1,22 +1,18 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-export const StyledLinkBack = styled(Link)`
-  position: absolute;
-  left: 24px;
-  top: 23px;
+export const Button = styled.button`
   display: flex;
-  width: 108px;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  text-transform: uppercase;
+  border-radius: 4px;
+  margin: 30vh auto;
+  width: 150px;
+  background: transparent;
+  border: 2px solid lightgreen;
+  cursor: pointer;
   font-family: 'Karla';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
-  color: #000000;
   :hover,
   :focus {
     color: green;
@@ -24,7 +20,7 @@ export const StyledLinkBack = styled(Link)`
     transform: scale(1.05);
   }
   @media screen and (min-width: 1440px) {
-    left: 50px;
-    top: 21px;
+    font-size: 24px;
+    width: 250px;
   }
 `;
