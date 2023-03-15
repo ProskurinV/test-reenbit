@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Wrapper, Input, Icon } from './SearchBar.styled';
+import { Wrapper, Input, Icon } from './Search.styled';
 
-const SearchBar = ({ query, setQuery }) => {
+function Search({ query, setQuery }) {
   useEffect(() => {
     const storedQuery = localStorage.getItem('query');
     if (storedQuery) {
@@ -26,5 +26,5 @@ const SearchBar = ({ query, setQuery }) => {
       />
     </Wrapper>
   );
-};
-export default SearchBar;
+}
+export default Search;

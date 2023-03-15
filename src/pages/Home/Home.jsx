@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { Container, Header } from './Home.styled';
 import { CharactersList } from '../../components/CharactersList/CharacterLists';
 import { Loader } from '../../../src/components/Loader/Loader';
-import SearchBar from '../../../src/components/Searchbar/SearchBar';
+import Search from '../../components/Searchbar/Search';
 import { useAllCharacters } from '../../hooks/useAllCharacters';
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <Container>
       <Header />
-      <SearchBar query={query} setQuery={setQuery} />
+      <Search query={query} setQuery={setQuery} />
       {isLoading && <Loader />}
       <CharactersList characters={allCharacters} />
 
