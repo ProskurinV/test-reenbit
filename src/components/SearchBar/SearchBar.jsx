@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 import { Wrapper, Input, Icon } from './SearchBar.styled';
 
 export const SearchBar = ({ query, setQuery }) => {
