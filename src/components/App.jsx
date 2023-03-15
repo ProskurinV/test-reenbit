@@ -19,7 +19,10 @@ export const App = () => {
           path={`${routes.CHARACTERDETAILS}/:id`}
           element={<CharactersDetails />}
         ></Route>
-        <Route path="*" element={<Navigate to="/" replace={<Home />} />} />
+        <Route
+          path="*"
+          element={<Navigate to={routes.HOME} replace={<Home />} />}
+        />
       </Routes>
     </Suspense>
   );
