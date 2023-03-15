@@ -12,16 +12,18 @@ const Home = () => {
   const { allCharacters, isLoading } = useAllCharacters(query);
 
   return (
-    <Container>
-      <Header />
-      <Search query={query} setQuery={setQuery} />
-      {isLoading && <Loader />}
-      <CharactersList characters={allCharacters} />
+    <Suspense>
+      <Container>
+        <Header />
+        <Search query={query} setQuery={setQuery} />
+        {isLoading && <Loader />}
+        <CharactersList characters={allCharacters} />
 
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
-    </Container>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </Container>
+    </Suspense>
   );
 };
 export default Home;

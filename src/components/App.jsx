@@ -11,7 +11,7 @@ const CharactersDetails = lazy(() =>
 
 export const App = () => {
   return (
-    <Suspense>
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path={routes.HOME} element={<Home />} />
         <Route index element={<Home />} />
