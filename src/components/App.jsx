@@ -9,6 +9,8 @@ const CharactersDetails = lazy(() =>
   import('../pages/CharactersDetails/CharacterDetails')
 );
 
+const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
+
 export const App = () => {
   return (
     <Suspense>
@@ -19,10 +21,11 @@ export const App = () => {
           path={`${routes.CHARACTERDETAILS}/:id`}
           element={<CharactersDetails />}
         ></Route>
-        <Route
+        {/* <Route
           path="*"
           element={<Navigate to={routes.HOME} replace={<Home />} />}
-        />
+        /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );
