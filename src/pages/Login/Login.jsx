@@ -6,7 +6,7 @@ import { auth, googleAuthProvider } from '../../firebase';
 import { Button } from './Login.styled';
 
 const Login = ({ setIsAuth }) => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleAuthProvider)
@@ -15,7 +15,10 @@ const Login = ({ setIsAuth }) => {
         setIsAuth(true);
         navigate('/');
       })
-      .catch(Notiflix.Notify.failure('Error'));
+      .catch(error => {
+        console.error(error);
+        Notiflix.Notify.failure('Error');
+      });
   };
 
   return (

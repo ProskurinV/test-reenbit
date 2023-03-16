@@ -1,21 +1,22 @@
 import React from 'react';
+import { PagContainer, PagBtn } from './Pagination.styled';
 
 export const Pagination = ({ page, setPage }) => {
-  let prev = () => {
+  const prev = () => {
     if (page === 1) {
       return;
     }
     setPage(prevPage => prevPage - 1);
   };
 
-  let next = () => {
+  const next = () => {
     setPage(prevPage => prevPage + 1);
   };
 
   return (
-    <div>
-      <button onClick={prev}>Prew</button>
-      <button onClick={next}>Next</button>
-    </div>
+    <PagContainer>
+      <PagBtn onClick={prev}>Prev</PagBtn>
+      <PagBtn onClick={next}>Next</PagBtn>
+    </PagContainer>
   );
 };

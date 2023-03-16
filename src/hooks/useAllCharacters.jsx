@@ -14,7 +14,6 @@ export const useAllCharacters = (query, page) => {
         const response = await fetchFilterCharacters(query, page);
 
         const characters = response.results;
-        console.log(characters);
         const sortedCharacters = characters.sort((a, b) =>
           a.name.localeCompare(b.name)
         );
@@ -32,7 +31,7 @@ export const useAllCharacters = (query, page) => {
 
   useEffect(() => {
     if (error !== false) {
-      console.log(error);
+      Notiflix.Notify.failure('erorr');
     }
   }, [error]);
 
