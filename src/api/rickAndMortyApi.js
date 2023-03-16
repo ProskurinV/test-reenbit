@@ -7,8 +7,8 @@ export async function fetchCharacterById(id) {
   return data;
 }
 
-export async function fetchFilterCharacters(query) {
-  const { data } = await axios.get(`/?name=${query}`);
+export async function fetchFilterCharacters(query, page) {
+  const { data } = await axios.get(`/?name=${query}&page=${page}`);
 
   return data;
 }

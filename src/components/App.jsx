@@ -2,6 +2,11 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import React, { lazy, useState } from 'react';
 import { routes } from '../routes';
 import { Suspense } from 'react';
+import OnlyScroll from 'only-scrollbar';
+
+new OnlyScroll(window, {
+  damping: 0.5,
+});
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const CharactersDetails = lazy(() =>

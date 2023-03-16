@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Notiflix from 'notiflix';
 import { fetchFilterCharacters } from '../api/rickAndMortyApi';
 
-export const useAllCharacters = query => {
+export const useAllCharacters = (query, page) => {
   const [allCharacters, setAllCharacters] = useState([]);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -11,10 +11,10 @@ export const useAllCharacters = query => {
     async function fetchCharacter() {
       try {
         setIsLoading(true);
-        const response = await fetchFilterCharacters(query);
+        const response = await fetchFilterCharacters(query, page);
 
         const characters = response.results;
-
+        console.log(characters);
         const sortedCharacters = characters.sort((a, b) =>
           a.name.localeCompare(b.name)
         );
@@ -28,7 +28,7 @@ export const useAllCharacters = query => {
     }
 
     fetchCharacter();
-  }, [query]);
+  }, [query, page]);
 
   useEffect(() => {
     if (error !== false) {

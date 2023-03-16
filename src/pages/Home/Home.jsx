@@ -8,12 +8,14 @@ import { useAllCharacters } from '../../hooks/useAllCharacters';
 
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
+import { Pagination } from '../../components/Pagination/Pagination';
 
 const Home = () => {
   const [query, setQuery] = useState('');
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
-  const { allCharacters, isLoading } = useAllCharacters(query);
-
+  const [page, setPage] = useState(1);
+  const { allCharacters, isLoading } = useAllCharacters(query, page);
+  // console.log(page);
   const navigate = useNavigate();
 
   const signUserOut = () => {
@@ -34,7 +36,7 @@ const Home = () => {
         <Search query={query} setQuery={setQuery} />
         {isLoading && <Loader />}
         <CharactersList characters={allCharacters} />
-
+        <Pagination page={page} setPage={setPage} />
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
